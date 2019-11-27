@@ -1,0 +1,22 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /register                     controllers.RegistrationController.index
+GET    /register                     controllers.RegistrationController.saveRegistration(request: Request)
+
+GET     /login                        controllers.LoginController.index
+POST    /login                        controllers.LoginController.saveLogin(request: Request)
+
+GET     /attendance                   controllers.HomeController.index(request: Request)
+POST    /attendance                   controllers.HomeController.saveAttendance(request: Request)
+
+GET     /logout                       controllers.LoginController.logout(request: Request)
+
+GET     /forgotpassword                       controllers.LoginController.forgotpassword(request: Request)
+
+GET     /getpassword                    controllers.LoginController.getpassword(request: Request)
